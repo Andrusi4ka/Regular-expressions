@@ -23,8 +23,9 @@ class Check {
         this.checkEmail.addEventListener('click', () => {
             this.valueEmail = this.inputEmail.value;
             this.isValidEmail = this.emailPattern.test(this.inputEmail.value);
-            if (this.isValidEmail) this.outEmail.innerHTML = `<span style="color: green"><i class="fa-solid fa-circle-check"></i></span> ${this.isValidEmail}`;
-            else this.outEmail.innerHTML = `<span style="color: red"><i class="fa-solid fa-circle-check"></i></span> ${this.isValidEmail}`;
+            if (this.inputEmail.value === '') this.outEmail.innerHTML = `<span style="color: orange"><i class="fa-solid fa-triangle-exclamation"></i></span> Поле пусте`;
+            else if (this.isValidEmail) this.outEmail.innerHTML = `<span style="color: green"><i class="fa-solid fa-circle-check"></i></span> ${this.isValidEmail}`;
+            else this.outEmail.innerHTML = `<span style="color: red"><i class="fa-solid fa-square-xmark"></i></span> ${this.isValidEmail}`;
         })
 
         this.clearEmail.addEventListener('click', () => {
@@ -35,8 +36,9 @@ class Check {
         this.checkUrl.addEventListener('click', () => {
             this.valueUrl = this.inputUrl.value;
             this.isValidUrl = this.urlPattern.test(this.inputUrl.value);
-            if (this.isValidUrl) this.outUrl.innerHTML = `<span style="color: green"><i class="fa-solid fa-circle-check"></i></span> ${this.isValidUrl}`;
-            else this.outUrl.innerHTML = `<span style="color: red"><i class="fa-solid fa-circle-check"></i></span> ${this.isValidUrl}`;
+            if (this.inputUrl.value === '') this.outUrl.innerHTML = `<span style="color: orange"><i class="fa-solid fa-triangle-exclamation"></i></span> Поле пусте`;
+            else if (this.isValidUrl) this.outUrl.innerHTML = `<span style="color: green"><i class="fa-solid fa-circle-check"></i></span> ${this.isValidUrl}`;
+            else this.outUrl.innerHTML = `<span style="color: red"><i class="fa-solid fa-square-xmark"></i></span> ${this.isValidUrl}`;
         })
 
         this.clearUrl.addEventListener('click', () => {
